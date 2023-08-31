@@ -20,7 +20,7 @@ class Cnvrtor:
         try:
             amount = float(amount)
         except ValueError:
-            raise ConvertionException(f'Неправльное значение {amount}')
+            raise ConvertionException(f'Неправильное значение {amount}')
 
         r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={quote_ticker}&tsyms={base_ticker}')
         total_base = json.loads(r.content)[keys[base]]
